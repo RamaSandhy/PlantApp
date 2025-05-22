@@ -5,6 +5,7 @@ class LocationController {
   final LocationService _service = LocationService();
 
   Future<Position> getCurrentLocation() async {
+    final pos = await _service.getCurrentPosition();
     return await _service.getCurrentPosition();
   }
 }
