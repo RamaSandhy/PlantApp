@@ -6,3 +6,15 @@ class LocationService {
     if (!await Geolocator.isLocationServiceEnabled()) {
       throw 'Location service tidak aktif';
     }
+
+        LocationPermission perm = await Geolocator.checkPermission();
+    if (perm == LocationPermission.denied) {
+      perm = await Geolocator.requestPermission();
+      if (perm == LocationPermission.denied) {
+        throw 'Izin lokasi ditolak';
+      }
+    }
+
+    return await Geolocator.getCurrentPosition();
+  }
+} 
