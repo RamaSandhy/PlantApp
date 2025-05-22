@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
+import 'map_page.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -28,7 +29,7 @@ class _HomePageState extends State<HomePage> {
                       final result = await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Scaffold(
+                          builder: (context) => MapPage(
                           ),
                         ),
                       );
