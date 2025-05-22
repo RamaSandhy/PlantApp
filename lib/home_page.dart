@@ -30,5 +30,20 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('PlantApp'),
       ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            ProfileWidget(imagePath: _imagePath, address: _address),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () async {
+                String? path = await _imageController.getImagePath(true);
+                if (path != null) {
+                  _updateProfile(imagePath: path);
+                }
+              },
+              child: const Text('Ambil Foto dari Kamera'),
+            ),
 
 }
