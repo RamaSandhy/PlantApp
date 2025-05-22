@@ -17,4 +17,9 @@ class ProfileWidget extends StatelessWidget {
               : const AssetImage('assets/profile_placeholder.png')
                   as ImageProvider,
         ),
+                const SizedBox(height: 10),
+        Text(address ?? 'Alamat belum tersedia'),
+      ],
+    );
+  }
 }
