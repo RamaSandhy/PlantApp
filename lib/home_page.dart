@@ -16,4 +16,19 @@ class _HomePageState extends State<HomePage> {
 
   String? _imagePath;
   String? _address;
+
+  void _updateProfile({String? imagePath, String? address}) {
+    setState(() {
+      if (imagePath != null) _imagePath = imagePath;
+      if (address != null) _address = address;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('PlantApp'),
+      ),
+
 }
