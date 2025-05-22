@@ -45,5 +45,14 @@ class _HomePageState extends State<HomePage> {
               },
               child: const Text('Ambil Foto dari Kamera'),
             ),
+            ElevatedButton(
+              onPressed: () async {
+                String? path = await _imageController.getImagePath(false);
+                if (path != null) {
+                  _updateProfile(imagePath: path);
+                }
+              },
+              child: const Text('Pilih Foto dari Galeri'),
+            ),
 
 }
