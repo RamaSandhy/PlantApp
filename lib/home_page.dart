@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:geocoding/geocoding.dart';
-import 'map_page.dart';
-
+import '../controllers/image_controller.dart';
+import '../controllers/location_controller.dart';
+import '../widget/profile_widget.dart';
 
 class HomePage extends StatefulWidget {
   @override
