@@ -54,5 +54,18 @@ class _HomePageState extends State<HomePage> {
               },
               child: const Text('Pilih Foto dari Galeri'),
             ),
-
+            ElevatedButton(
+              onPressed: () async {
+                String? addr = await _locationController.getAddress();
+                if (addr != null) {
+                  _updateProfile(address: addr);
+                }
+              },
+              child: const Text('Ambil Alamat Saat Ini'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
