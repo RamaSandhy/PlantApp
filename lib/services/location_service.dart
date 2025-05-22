@@ -17,4 +17,10 @@ class LocationService {
 
     return await Geolocator.getCurrentPosition();
   }
+
+    Future<String> getAddressFromLatLng(Position pos) async {
+    final placemarks = await placemarkFromCoordinates(pos.latitude, pos.longitude);
+    final p = placemarks.first;
+    return '${p.name}, ${p.locality}, ${p.country}';
+  }
 } 
